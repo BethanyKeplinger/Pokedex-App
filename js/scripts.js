@@ -12,13 +12,15 @@ for(let i = 0; i < pokemonList.length; i++) {
     ' (height:' +
     pokemonList[i].height +
     'm)-' +
-    ' Wow, that\'s a big pokemon!'
+    ' Wow, that\'s a big pokemon!' +
+    '<br>'
   )
 } else
   document.write(
   pokemonList[i].name +
   ' (height: ' +
   pokemonList[i].height +
-  'm)'
+  'm)'+
+  '<br>'
   );
 }
