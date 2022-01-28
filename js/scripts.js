@@ -1,4 +1,5 @@
 
+let pokemonRepository= (function ()) {
 let pokemonList = [
   { name: 'Jigglypuff',
     height: .5,
@@ -15,6 +16,16 @@ let pokemonList = [
     type: ['psychic', 'water']
   }
 ];
+
+return {
+  add: function (pokemon) {
+    pokemonList.push(pokemon);
+  },
+  getAll: function () {
+    return pokemonList;
+  }
+};
+})();
 
 // for(let i = 0; i < pokemonList.length; i++) {
 //   if (pokemonList[i].height > 1) {
@@ -36,6 +47,6 @@ let pokemonList = [
 //   );
 // }
 
-pokemonList.forEach(function (pokemon) {
+pokemonRepository.getAll().forEach(function (pokemon) {
   console.log(pokemon.name + ' is ' + pokemon.height + ' meters tall ');
 });
