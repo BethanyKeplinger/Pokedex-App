@@ -1,5 +1,5 @@
-
-let pokemonRepository= (function ()) {
+let pokemonRepository= (function () {
+const pokemonRepository = (() => {
 let pokemonList = [
   { name: 'Jigglypuff',
     height: .5,
