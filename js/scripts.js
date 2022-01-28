@@ -1,26 +1,41 @@
 
 let pokemonList = [
-  { name: 'Jigglypuff', height: .5, type: ['fairy', 'normal'] },
-  { name: 'Beedrill' , height: 1, type: ['bug', 'poison'] },
-  { name: 'Slowpoke', height: 1.2, type: ['psychic', 'water'] }
+  { name: 'Jigglypuff',
+    height: .5,
+    type: ['fairy', 'normal']
+  },
+
+  { name: 'Beedrill' ,
+    height: 1,
+    type: ['bug', 'poison']
+  },
+
+  { name: 'Slowpoke',
+    height: 1.2,
+    type: ['psychic', 'water']
+  }
 ];
 
-for(let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height > 1) {
-  document.write (
-    pokemonList[i].name +
-    ' (height:' +
-    pokemonList[i].height +
-    'm)-' +
-    ' Wow, that\'s a big pokemon!' +
-    '<br>'
-  )
-} else
-  document.write(
-  pokemonList[i].name +
-  ' (height: ' +
-  pokemonList[i].height +
-  'm)'+
-  '<br>'
-  );
-}
+// for(let i = 0; i < pokemonList.length; i++) {
+//   if (pokemonList[i].height > 1) {
+//   document.write (
+//     pokemonList[i].name +
+//     ' (height:' +
+//     pokemonList[i].height +
+//     'm)-' +
+//     ' Wow, that\'s a big pokemon!' +
+//     '<br>'
+//   )
+// } else
+//   document.write(
+//   pokemonList[i].name +
+//   ' (height: ' +
+//   pokemonList[i].height +
+//   'm)'+
+//   '<br>'
+//   );
+// }
+
+pokemonList.forEach(function (pokemon) {
+  console.log(pokemon.name + ' is ' + pokemon.height + ' meters tall ');
+});
