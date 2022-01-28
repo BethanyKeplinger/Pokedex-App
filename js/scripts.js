@@ -1,4 +1,4 @@
-let pokemonRepository= (function () {
+
 const pokemonRepository = (() => {
 let pokemonList = [
   { name: 'Jigglypuff',
