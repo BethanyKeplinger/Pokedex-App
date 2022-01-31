@@ -37,6 +37,18 @@ body {
   text-align: center;
 }
 
+.pokemon-button{
+  background-color: #d5dae0; /*light gray*/
+  border: solid;
+  display: inline-block;
+  font-family: inherit;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 0.2s;
+  opacity: 1;
+}
+
 .page-header {
   clear: both;
   display: flex;
