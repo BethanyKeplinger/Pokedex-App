@@ -29,7 +29,7 @@ const pokemonRepository = (() => {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('pokemon-button');
-    listpokemon.appendchild(button);
+    listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
 
     //adding eventhandler to button to show pokemon
@@ -43,7 +43,7 @@ const pokemonRepository = (() => {
   }
 
   return {
-    add: add,
+    //add: add,
     getAll: getAll,
     addListItem: addListItem,
   };
