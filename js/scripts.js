@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
       button.innerText = pokemon.name;
       button.classList.add('pokemon-button');
       listpokemon.appendChild(button);
-      pokemonList.appendChild(listpokemonmn);
+      pokemonList.appendChild(listpokemon);
 
       //Add event listener to button
       button.addEventListener('click', function (event) {
@@ -73,7 +73,7 @@ let pokemonRepository = (function () {
     //function shows pokemon name, height and image
     function showDetails(item) {
       pokemonRepository.loadDetails(item).then(function () {
-        showModal(pokemon.name, 'Height: ' + pokemon.height, pokemon.imageUrl);
+        showModal(item.name, 'Height: ' + item.height, item.imageUrl);
       });
     }
 
