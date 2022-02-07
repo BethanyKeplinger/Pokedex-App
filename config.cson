@@ -16,6 +16,3 @@
 
   # Disable linter when no `.jshintrc` is found in project
   disableWhenNoJshintrcFileInPath: false
-
-
-eslint --init
