@@ -1,3 +1,4 @@
+
 let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
     let repository = [];
@@ -18,13 +19,17 @@ let pokemonRepository = (function () {
 
     //function creates button for pokemon list
     function addListItem(pokemon) {
-      let pokemonList = document.querySelector('.pokemon-list');
-      let listpokemon = document.createElement('li');
-      let button = document.createElement('button');
-      button.innerText = pokemon.name;
-      button.classList.add('pokemon-button');
+      let listGroupElement = document.querySelector('.pokemon-list');
+      let listItemButton = document.createElement('button');
+      listItemButton.innerText = pokemon.name;
+      listItemButton.classList.add('list-group-item', 'list-group-item-action', 'text-center');
       listpokemon.appendChild(button);
-      pokemonList.appendChild(listpokemon);
+
+      listGroupElement.appendChild(listItemButton);
+
+      //adding the data toggle and data target
+      listItemButton.setAttribute('data-toggle', 'modal');
+      listItemButton.setAttribute('data-target', '#pokemonModal');
 
       //Add event listener to button
       button.addEventListener('click', function (event) {
@@ -61,7 +66,7 @@ let pokemonRepository = (function () {
         return response.json();
       }).then(function (details) {
         // Now we add the details to the item
-        item.imageUrl =
+        item.imageUrl = details.sprites.front_default;
         details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -79,42 +84,36 @@ let pokemonRepository = (function () {
 
     //Start Modal function
     function showModal(title, text, imgSrc) {
-      let modalContainer = document.querySelector('#modal-container');
+      let modalBody = $('modal-body');
+      let modalTitle = $('modal-title');
 
-      //Clear all existing modal content
-      modalContainer.innerHTML = '';
+      //let modalHeader = $('modal-header');
+      //let $modalContainer = $('#modal-container);
+      //clear existing content of the modal//modalHeader.emtpy();
+      modalTitle.empty();
+      modalBody.empty();
 
-      let modal = document.createElement('div');
-      modal.classList.add('modal');
+      //creating element for name in modal content
+      let titleElement = $('<h1>' + item.name + '</h1>');
+      //creating img in modal content
+      let imageElement = document.creatElement('img');
+      imageElement.classList.add('modal-img');
+      imageElement.src = pokemon.imageUrl;
 
-      //Add the new modal content
-      let closeButtonElement = document.createElement('button');
-      closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
-      closeButtonElement.addEventListener('click', hideModal);
+      //creating element for height in modal content
+      let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
 
-      let titleElement = document.createElement('h1');
-      titleElement.innerText = title;
+      //creating element for weight in modal content
+      let weightElement = $('<p>' + 'weight : ' + item.weight + '</p>');
 
-      let contentElement = document.createElement('p');
-      contentElement.innerText = text;
+      //creating element for types in modal content
+      let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
 
-      let modalImg = document.createElement('img');
-      modalImg.classList.add('modal-img');
-      modalImg.src = imgSrc;
-
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
-      modal.appendChild(modalImg);
-      modalContainer.appendChild(modal);
-
-      //makes modal visible
-      modalContainer.classList.add('is-visible');
-    }
-
-    function hideModal() {
-      modalContainer.classList.remove('is-visible');
+      modalTitle.append(titleElement);
+      modalBody.append(imageElement);
+      modalBody.append(heightElement);
+      modalBody.append(weightElement);
+      modalBody.append(typesElement);
     }
 
     //Using ESC key to exit out of modal
