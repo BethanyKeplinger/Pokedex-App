@@ -28,7 +28,9 @@ let pokemonRepository = (function () {
       listItem.addClass('group-list-item');
       listItem.append(button);
       pokeList.append(listItem);
-      addListener(button, pokemon);
+      button.addEventListener('click', function (event) {
+        showDetails(pokemon);
+      });
     }
 
     //function loads list from api
@@ -139,6 +141,7 @@ let pokemonRepository = (function () {
       loadList: loadList,
       loadDetails: loadDetails,
       showDetails: showDetails,
+      showModal: showModal,
     };
   })();
 
