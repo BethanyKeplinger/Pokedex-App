@@ -1,6 +1,6 @@
 
 let pokemonRepository = (function () {
-    let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('.modal-container');
     let repository = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
@@ -19,19 +19,27 @@ let pokemonRepository = (function () {
 
     //function creates button for pokemon list
     function addListItem(pokemon) {
-      let pokeList = $('#pokemon-list');
+      let pokeList = $('.pokemon-list');
       let listItem = $('<li></li>');
       let button = $('<button></button>');
-      button.attr({ type: 'button', 'data-toggle': 'modal', 'data-target': '#modal' });
+      button.attr({ type: 'button', 'data-toggle': 'modal', 'data-target': '.modal' });
       button.text(pokemon.name);
       button.addClass('poke-button', 'btn', 'btn-primary');
       listItem.addClass('group-list-item');
       listItem.append(button);
       pokeList.append(listItem);
-      button.addEventListener('click', function (event) {
+      addListener(button, pokemon);
+    }
+
+    button.addEventListener('click', function (event) {
         showDetails(pokemon);
       });
-    }
+
+    //function addEventListener(button, pokemon) {
+    //button.addEventListener('click', function () {
+    //showDetails(pokemon);
+    //});
+    //}
 
     //function loads list from api
     function loadList() {
@@ -79,9 +87,9 @@ let pokemonRepository = (function () {
 
     //Start Modal function
     function showModal(item) {
-      let modalBody = $('modal-body');
-      let modalTitle = $('modal-title');
-      let modalHeader = $('modal-header');
+      let modalBody = $('.modal-body');
+      let modalTitle = $('.modal-title');
+      let modalHeader = $('.modal-header');
 
       //let $modalContainer = $('#modal-container);
       //clear existing content of the modal//modalHeader.emtpy();
