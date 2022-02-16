@@ -38,8 +38,8 @@ body {
 }
 
 
-.pokemon-button {
-  background-color: #d5dae0; /*light gray*/
+/*.pokemon-button {
+  background-color: #d5dae0; /*light gray
   border: solid;
   display: inline-block;
   font-family: inherit;
