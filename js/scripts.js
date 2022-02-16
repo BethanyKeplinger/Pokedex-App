@@ -32,17 +32,22 @@ let pokemonRepository = (function () {
       listItem.addClass('group-list-item');
       listItem.append(button);
       pokeList.append(listItem);
-      addEventListener(button, pokemon);
 
-      addEventListener('click', function (event) {
+      //addListener(button, pokemon);
+
+      //button.addEventListener('click', function (event) {
+      //  showDetails(pokemon);
+      //});
+
+      button.click(function () {
         showDetails(pokemon);
       });
     }
 
-    //function addEventListener(button, pokemon) {
-    //button.addEventListener('click', function () {
-    //showDetails(pokemon);
-    //});
+    //function buttonEventListener(button, pokemon) {
+    //  button.addEventListener('click', function () {
+    //    showDetails(pokemon);
+    //  });
     //}
 
     //function loads list from api
@@ -93,6 +98,7 @@ let pokemonRepository = (function () {
     function showModal(item) {
       let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
+
       //let modalHeader = $('.modal-header');
 
       //let $modalContainer = $('#modal-container);
