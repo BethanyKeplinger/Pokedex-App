@@ -35,11 +35,11 @@ body {
   list-style-type: none;
 }
 
-.page-footer {
+/*.page-footer {
   clear: both;
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: var(--footer-color);
   position: absolute;
-}
+}*/
