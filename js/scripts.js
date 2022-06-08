@@ -20,6 +20,23 @@ let pokemonRepository = (function() {
     return repository;
   }
 
+  //Explanation: pokemon search function, used in navbar
+  // $(document).ready(function() {
+  //   $('#search-pokemon').on('keyup', function() {
+  //     let value = $(this)
+  //       .val()
+  //       .toLowerCase();
+  //     $('.search-button').filter(function() {
+  //       $(this).toggle(
+  //         $(this)
+  //           .text()
+  //           .toLowerCase()
+  //           .indexOf(value) > -1
+  //       );
+  //     });
+  //   });
+  // });
+
   //function creates button for pokemon list
   function addListItem(pokemon) {
     let pokeList = $('.list-group');
@@ -43,22 +60,10 @@ let pokemonRepository = (function() {
     listItem.append(button);
     pokeList.append(listItem);
 
-    //addListener(button, pokemon);
-
-    //button.addEventListener('click', function (event) {
-    //  showDetails(pokemon);
-    //});
-
     button.click(function() {
       showDetails(pokemon);
     });
   }
-
-  //function buttonEventListener(button, pokemon) {
-  //  button.addEventListener('click', function () {
-  //    showDetails(pokemon);
-  //  });
-  //}
 
   //function loads list from api
   function loadList() {
@@ -144,28 +149,6 @@ let pokemonRepository = (function() {
     modalBody.append(weightElement);
     modalBody.append(typesElement);
   }
-
-  //Using ESC key to exit out of modal
-  //window.addEventListener('keydown', (e) => {
-  //if (e.key === 'Escape' &&
-  //modalContainer.classList.contains('is-visible')) {
-  //hideModal();
-  //}
-  //});
-
-  //CLosing modal by clicking outside the container
-  //modalContainer.addEventListener('click', (e) => {
-  // Since this is also triggered when clicking INSIDE the modal
-  // We only want to close if the user clicks directly on the overlay
-  //let target = e.target;
-  //if (target === modalContainer) {
-  //hideModal();
-  //}
-  //});
-
-  //document.querySelector('#show-modal').addEventListener('click', () => {
-  //showModal('Modal title', 'This is the modal content!');
-  //});
 
   return {
     add: add,
