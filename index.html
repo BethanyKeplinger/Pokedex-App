@@ -13,7 +13,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -25,7 +25,7 @@
           height="32"
           class="d-inline-block align top"
           alt="Pokedex logo, red and white pokeball"
-        />Podex App</a
+        />Pokedex App</a
       >
       <button
         class="navbar-toggler"
@@ -41,6 +41,21 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav"></ul>
       </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          id="search-pokemon"
+          type="search"
+          placeholder="Search pokemon"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-secondary btn-sm my-2 my-sm-0"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
     </nav>
     <!-- Modal -->
     <div
@@ -70,7 +85,13 @@
     </div>
 
     <!-- Pokemon List -->
-    <div class="list-group group-list-item"></div>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="list-group group-list-item pokemon-list"></ul>
+        </div>
+      </div>
+    </main>
 
     <footer class="page-footer"></footer>
 
@@ -91,6 +112,6 @@
     ></script>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
-    <script src="dist/scripts.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
