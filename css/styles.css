@@ -29,11 +29,31 @@ body {
   color: var(--primary-color);
 }
 
+.container-fluid {
+  width: 100%;
+}
+
 .list-group {
   margin-top: 90px;
   margin-bottom: 90px;
   list-style-type: none;
+  width: 100%;
+  display: flex;
+  font-size: larger;
+  font-weight: 400;
+  text-transform: uppercase;
 }
+
+.list-group-item {
+  flex: 1;
+  width: 100%
+}
+
+/* 
+.row {
+  display: flex;
+  width: 100%;
+} */
 
 /*.page-footer {
   clear: both;
